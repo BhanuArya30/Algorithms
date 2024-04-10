@@ -12,8 +12,8 @@
 def isValidaSubsequence(array, sequence):
     j = 0
     for num in array:
-        if num == sequence[i]:
+        if num == sequence[j]:
             j += 1
         if j == len(sequence):
             break
-    return l == len(sequence)
+    return j == len(sequence)
