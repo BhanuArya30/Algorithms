@@ -1,0 +1,12 @@
+def twoNumberSum(array, targetSum):
+    array.sort()
+    start = 0
+    end = len(array) - 1
+    while start < end:
+        if array[start] + array[end] < targetSum:
+            start += 1
+        elif array[start] + array[end] > targetSum:
+            end -= 1
+        else:
+            return [array[start], array[end]]
+    return []

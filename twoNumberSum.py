@@ -2,7 +2,7 @@ def twoNumberSum(array, targetSum):
     pot = {}
     for idx, val in enumerate(array):
         if val in pot:
-            return [val, targetSum]
+            return [val, targetSum-val]
         else:
             pot[targetSum - val] = idx
     return []
