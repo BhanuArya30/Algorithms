@@ -14,6 +14,7 @@
 #             j -= 1
 #     return result
 
+
 # Time O(nlogn) | Space O(n)
 def sortedSquaredArray(array):
     """
@@ -34,8 +35,8 @@ def sortedSquaredArray(array):
     n = len(array)
     result = [0] * n
     left = 0
-    right = n-1
-    for i in range(n-1, -1, -1):
+    right = n - 1
+    for i in range(n - 1, -1, -1):
         if array[left] ** 2 >= array[right] ** 2:
             result[i] = array[left] ** 2
             left += 1
@@ -47,5 +48,4 @@ def sortedSquaredArray(array):
 
 if __name__ == "__main__":
     import doctest
-
     doctest.testmod()
