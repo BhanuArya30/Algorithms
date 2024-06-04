@@ -27,7 +27,7 @@ class LinkedList:
             self.tail = new_node
         self.length += 1
         return True
-    
+
     def pop(self) -> Node:
         if self.length == 0:
             return None
@@ -42,7 +42,7 @@ class LinkedList:
             self.head = None
             self.tail = None
         return temp
-    
+
     def prepend(self, value):
         new_node = Node(value)
         if self.length == 0:
@@ -54,7 +54,6 @@ class LinkedList:
         self.length += 1
         return True
 
-
     def pop_first(self):
         if self.length == 0:
             return None
@@ -65,16 +64,14 @@ class LinkedList:
         if self.length == 0:
             self.tail = None
         return temp
-    
 
     def get(self, index):
-        if index < 0 or index >=  self.length:
+        if index < 0 or index >= self.length:
             return None
         temp = self.head
         for _ in range(index):
             temp = temp.next
         return temp
-
 
     def set(self, index, value):
         temp = self.get(index)
@@ -82,7 +79,7 @@ class LinkedList:
             temp.value = value
             return True
         return False
-    
+
     def insert(self, index, value):
         if index < 0 or index >= self.length:
             return False
@@ -91,29 +88,51 @@ class LinkedList:
         if index == self.length:
             self.append(value)
         new_node = Node(value)
-        temp = self.get(index - 1) 
+        temp = self.get(index - 1)
         new_node.next = temp.next
         temp.next = new_node
         return True
 
+    def remove(self, index):
+        if index < 0 or index >= self.length:
+            return None
+        if index == 0:
+            return self.pop_first()
+        if index == self.length - 1:
+            return self.pop()
+        prev = self.get(index - 1)
+        temp = prev.next
+        prev.next = temp.next
+        temp.next = None
+        self.length -= 1
+        return temp
+
+    def reverse(self):
+        temp = self.head
+        self.head = self.tail
+        self.tail = temp
+        before = None
+        after = temp.next
+        for _ in range(self.length):
+            after = temp.next
+            temp.next = before
+            before = temp
+            temp = after
+
+
 my_ll = LinkedList(1)
+my_ll.append(2)
 my_ll.append(3)
-my_ll.append(5)
+my_ll.append(4)
 # my_ll.print_list()
 # print(my_ll.pop().value)
-my_ll.prepend(0)
+# my_ll.prepend(0)
 # my_ll.print_list()
 # print('*'*30)
 # print('pop')
 # print(my_ll.pop_first())
 # print('*'*30)
 my_ll.print_list()
-
-print('*'*30)
-print(my_ll.set(2, 2))
-
-print('*'*30)
+my_ll.reverse()
+print("*" * 30)
 my_ll.print_list()
-
-
-
