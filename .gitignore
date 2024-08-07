@@ -1,3 +1,4 @@
 __pycache__
 .pytest_cache
 .venv
+algorithms_workspace.code-workspace
