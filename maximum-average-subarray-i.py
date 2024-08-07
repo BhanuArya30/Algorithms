@@ -4,7 +4,7 @@ from utils import timing_decorator
 
 # You are given an integer array nums consisting of n elements, and an integer k.
 
-# Time O(n)
+# Time O(n * k)
 # @timing_decorator
 # def findMaxAverage(nums: List[int], k: int) -> float:
 #     n = len(nums)
@@ -16,7 +16,7 @@ from utils import timing_decorator
 #     return max_average
 
 
-# Time O(n) - modified approach
+# Time O(n)
 # @timing_decorator
 # def findMaxAverage(nums: List[int], k: int) -> float:
 #     n = len(nums)
@@ -34,8 +34,7 @@ from utils import timing_decorator
 #     return max_average
 
 
-
-# Time O(n) - optimized 3
+# Time O(n) - optimized code
 @timing_decorator
 def findMaxAverage(nums: List[int], k: int) -> float:
     n = len(nums)
