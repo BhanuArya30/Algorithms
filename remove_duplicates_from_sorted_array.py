@@ -8,14 +8,14 @@ from typing import List
 def removeDuplicates(nums: List[int]) -> int:
     if not nums:
         return 0
-    
+    # first pointer - uniqu_idx for unique elements index
     unique_idx = 0
-
+    # second pointer idx - for nums elements
     for idx in range(1, len(nums)):
         if nums[idx] != nums[idx - 1]:
             unique_idx += 1
             nums[unique_idx] = nums[idx]
-    
+    # return the length of unique elements
     return unique_idx + 1
 
 
