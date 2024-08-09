@@ -1,14 +1,15 @@
 from typing import List
 
-# Given an array of sorted numbers, remove all duplicates from it. 
-# You should not use any extra space; 
+# Given an array of sorted numbers, remove all duplicates from it.
+# You should not use any extra space;
 # after removing the duplicates in-place return the length of the subarray that has no duplicate in it.
+
 
 # Time O(n) | Space O(1)
 def removeDuplicates(nums: List[int]) -> int:
     if not nums:
         return 0
-    # first pointer - uniqu_idx for unique elements index
+    # first pointer - unique_idx for unique elements index
     unique_idx = 0
     # second pointer idx - for nums elements
     for idx in range(1, len(nums)):
